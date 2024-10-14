@@ -7,4 +7,4 @@ The model constants:
 
 - `CLIENTS`: The participants of the algorithm.
 - `WITH_CRASHING`: Allow any of participants crash after sending a write message before receiving a response.
-- `WITH_RO`: Allow "read-only" clients to particate. The algorithm then becomes a `RWLock` implementation: *many of "read-only" clients commit* or *exactly one of "read-write" client commits*.
+- `WITH_RO`: Allow "read-only" clients to participate. The algorithm then becomes a `RWLock` implementation: *many of "read-only" clients commit* or *exactly one of "read-write" client commits*.
