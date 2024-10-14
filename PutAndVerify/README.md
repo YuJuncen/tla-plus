@@ -2,3 +2,9 @@
 
 This algorithm allows you write to a file exactly-once in a object storage 
 supports `PUT` and `LIST` and the two operations have strong consistency.
+
+The model parameters:
+
+- `CLIENTS`: The particants of the algorithm.
+- `WITH_CRASHING`: Allow any of particants crash after sending a write message before receiving a response.
+- `WITH_RO`: Allow "read-only" clients to particate. The algorithm then becomes a `RWLock` implementation: *many of "read-only" clients commit* or *exactly one of "read-write" client commits*.
