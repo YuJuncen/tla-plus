@@ -68,8 +68,7 @@ BeRO(c) == /\ clState[c] = "begin"
            /\ clFavor' = [ clFavor EXCEPT ![c] = "read-only" ]
            /\ UNCHANGED << clState, storage >>
            
-WrittenAndCrash(c) == /\ clState[c] = "precheck-done" \/ clState[c] = "write-check-done"
-                      /\ clState' = [ clState EXCEPT ![c] = "crashed" ]
+WrittenAndCrash(c) == /\ clState' = [ clState EXCEPT ![c] = "crashed" ]
                       /\ DoWriteBlank(c) \/ DoCommit(c)
                       /\ UNCHANGED << clFavor >>
                       
@@ -89,5 +88,5 @@ THEOREM WVSpec => [](WVConsistency /\ WVTypeOk)
                
 =============================================================================
 \* Modification History
-\* Last modified Mon Oct 14 15:38:01 CST 2024 by Hillium
+\* Last modified Wed Dec 18 14:00:06 CST 2024 by Hillium
 \* Created Sat Jun 29 10:41:34 CST 2024 by Hillium
